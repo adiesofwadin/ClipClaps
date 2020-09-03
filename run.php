@@ -7,7 +7,7 @@ $areaCode = trim(fgets(STDIN));
 echo 'Enter Phone Number : '; 
 $no = trim(fgets(STDIN)); 
 
-$otp = file_get_contents('https://putrisunda.com/api/otp.php?no=' . $no . '&id=' . $uuid . '&areacode=' . $areaCode)."\n";
+$otp = file_get_contents('https://sayabukanpilot.com/api/otp.php?no=' . $no . '&id=' . $uuid . '&areacode=' . $areaCode)."\n";
 
 if(preg_match('/Success/i', $otp)){
     echo 'Enter OTP : '; 
@@ -16,7 +16,7 @@ if(preg_match('/Success/i', $otp)){
     echo 'Enter REFF : '; 
     $reff = trim(fgets(STDIN));
     
-    $redeem = file_get_contents('https://putrisunda.com/api/redeem.php?no=' . $no . '&otp=' . $otpSMS . '&uuid=' . $uuid . '&areacode=' . $areaCode . '&reff=' . $reff)."\n";
+    $redeem = file_get_contents('https://sayabukanpilot.com/api/redeem.php?no=' . $no . '&otp=' . $otpSMS . '&uuid=' . $uuid . '&areacode=' . $areaCode . '&reff=' . $reff)."\n";
     echo $redeem;
 } else if (preg_match('/Sever is busy, please try again later./i', $otp)){
     echo "Sever is busy, please try again later.";
